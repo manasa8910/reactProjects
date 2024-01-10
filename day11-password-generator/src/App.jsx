@@ -1,15 +1,14 @@
-import './App.css';
-import React, { useState } from 'react';
+import "./App.css";
+import React, { useState } from "react";
 
 function App() {
   const [length, setLength] = useState(12);
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [useUppercase, setUseUppercase] = useState(true);
   const [useLowercase, setUseLowercase] = useState(true);
   const [useNumbers, setUseNumbers] = useState(true);
   const [useSymbols, setUseSymbols] = useState(true);
-
 
   function handleChange(event) {
     setLength(event.target.value);
@@ -47,42 +46,72 @@ function App() {
   }
 
   return (
-    <div className='container'>
+    <div className="container">
       <h2>Password Generator</h2>
-      <div className='password-field'>
-        <span id='password'>{password}</span>
-        <button className='btn' id='clipboard' title='Copy' onClick={copyPassword}>
+      <div className="password-field">
+        <span id="password">{password}</span>
+        <button
+          className="btn"
+          id="clipboard"
+          title="Copy"
+          onClick={copyPassword}
+        >
           <i class="fa-regular fa-paste"></i>
         </button>
       </div>
-      <div className={`modal ${showModal ? 'show' : ''}`}>
-        <div className='modal-content'>
-          Password copied!
-        </div>
+      <div className={`modal ${showModal ? "show" : ""}`}>
+        <div className="modal-content">Password copied!</div>
       </div>
-      <div className='options'>
-        <div className='option'>
+      <div className="options">
+        <div className="option">
           <label>Length</label>
-          <input type='number' id='length' min='4' max='20' value={length} onChange={handleChange} />
+          <input
+            type="number"
+            id="length"
+            min="4"
+            max="20"
+            value={length}
+            onChange={handleChange}
+          />
         </div>
-        <div className='option'>
+        <div className="option">
           <label>A-Z</label>
-          <input type='checkbox' id='uppercase' checked={useUppercase} onChange={(e) => setUseUppercase(e.target.checked)} />
+          <input
+            type="checkbox"
+            id="uppercase"
+            checked={useUppercase}
+            onChange={(e) => setUseUppercase(e.target.checked)}
+          />
         </div>
-        <div className='option'>
+        <div className="option">
           <label>a-z</label>
-          <input type='checkbox' id='lowercase' checked={useLowercase} onChange={(e) => setUseLowercase(e.target.checked)} />
+          <input
+            type="checkbox"
+            id="lowercase"
+            checked={useLowercase}
+            onChange={(e) => setUseLowercase(e.target.checked)}
+          />
         </div>
-        <div className='option'>
+        <div className="option">
           <label>0-9</label>
-          <input type='checkbox' id='numbers' checked={useNumbers} onChange={(e) => setUseNumbers(e.target.checked)} />
+          <input
+            type="checkbox"
+            id="numbers"
+            checked={useNumbers}
+            onChange={(e) => setUseNumbers(e.target.checked)}
+          />
         </div>
-        <div className='option'>
+        <div className="option">
           <label>!@#$%^&*</label>
-          <input type='checkbox' id='symbols' checked={useSymbols} onChange={(e) => setUseSymbols(e.target.checked)} />
+          <input
+            type="checkbox"
+            id="symbols"
+            checked={useSymbols}
+            onChange={(e) => setUseSymbols(e.target.checked)}
+          />
         </div>
       </div>
-      <button className='btn' id='generate' onClick={generatePassword}>
+      <button className="btn" id="generate" onClick={generatePassword}>
         Generate Password
       </button>
     </div>

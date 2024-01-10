@@ -1,13 +1,13 @@
 :root {
-  --primary-color: #4B0082;
+  --primary-color: #4b0082;
   /* indigo */
-  --secondary-color: #7732AD;
+  --secondary-color: #7732ad;
   /* dark indigo */
-  --password-field-color: #5F259F;
+  --password-field-color: #5f259f;
   /* deep indigo */
-  --background-color: #E6E6FA;
+  --background-color: #e6e6fa;
   /* lavander */
-  --white: #FFFFFF;
+  --white: #ffffff;
 }
 
 .App {
@@ -17,9 +17,8 @@
 body {
   background-color: var(--background-color);
   color: var(--white);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-
 
 h2 {
   margin: 10px 0 20px;
